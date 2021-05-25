@@ -1,0 +1,28 @@
+{
+  "name": "real-time-pizza-app",
+  "version": "1.0.0",
+  "description": "- Create directory structure.\r - Create a npm project and install all dependencies.\r     - Dependencies\r         - express\r         - ejs express-ejs-layouts\r     - Dev dependencies\r         - nodemon\r - Create Express server -> Create a server.js file.\r - Git setup and first commit.\r - Install Laravel Mix\r     - setup JavaScript and CSS\r - Install Tailwind CSS\r - Create Home page using HTML and CSS.\r - Create Cart Page\r     - Order Summary Section\r     - Empty Cart Section\r     - Move routes to routes files\r     - Create dedicated controllers\r - Add to cart functionality.\r     - Fetch all pizzas from DB and show on home page\r     - Create menu model and put dummy data.\r         - Connect to MongoDB\r         - Use connect-mongo for session store\r             - dependencies\r                 - mongoose, express-session, connect-mongo, dotenv\r     - Axios to send AJAX request\r     - Install notification library npm i noty\r - Create Login Page with Route\r - Create Register Page with Route\r - Build Register Crud\r     - Dependencies express-flash express-session dotenv\r     - status code article https://www.restapitutorial.com/httpstatuscodes.html\r - Build Login using Passport\r     - Install dependencies passport passport-local express-session\r - Create Order controller and link it in server.js\r - Create Orders view with table and link it in server.js\r - Create Orders view with table for customer and admin.\r - Place order functionality.\r - Show all my orders on customer order page.\r - Show orders on admin orders page\r - Change order status\r - Create ORders single page with status\r - Order Tracker\r     - Socket Connection\r         - Dependencies socket.io\r - Build Project for deployment.\r - Deploy project on Live Server.",
+  "main": "index.js",
+  "scripts": {
+    "dev" : "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranjalshikhar/real-time-pizza-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pranjalshikhar/real-time-pizza-app/issues"
+  },
+  "homepage": "https://github.com/pranjalshikhar/real-time-pizza-app#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
