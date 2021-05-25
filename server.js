@@ -7,9 +7,13 @@ const path = require('path');
 
 
 
+app.get('/', (req,res) => {
+    res.render('home');
+})
+
 // Set Template
 app.use(expressLayout);
-app.set('views', path.join(__dirname, './resources/views'));
+app.set('views', path.join(__dirname, '/resources/views/'));
 app.set('view engine', 'ejs');
 
 
