@@ -26,4 +26,25 @@
         - Use connect-mongo for session store
             - dependencies
                 - mongoose, express-session, connect-mongo, dotenv
-    
+    - Axios to send AJAX request
+    - Install notification library npm i noty
+- Create Login Page with Route
+- Create Register Page with Route
+- Build Register Crud
+    - Dependencies express-flash express-session dotenv
+    - status code article https://www.restapitutorial.com/httpstatuscodes.html
+- Build Login using Passport
+    - Install dependencies passport passport-local express-session
+- Create Order controller and link it in server.js
+- Create Orders view with table and link it in server.js
+- Create Orders view with table for customer and admin.
+- Place order functionality.
+- Show all my orders on customer order page.
+- Show orders on admin orders page
+- Change order status
+- Create ORders single page with status
+- Order Tracker
+    - Socket Connection
+        - Dependencies socket.io
+- Build Project for deployment.
+- Deploy project on Live Server.
