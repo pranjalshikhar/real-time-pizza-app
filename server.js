@@ -5,7 +5,8 @@ const ejs = require('ejs');
 const expressLayout = require('express-ejs-layouts');
 const path = require('path');
 
-
+// Use CSS
+app.use(express.static(__dirname +  '/public'));
 
 app.get('/', (req,res) => {
     res.render('home');
