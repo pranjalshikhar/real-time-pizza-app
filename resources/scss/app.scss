@@ -1,7 +1,8 @@
 @import './variables';
 
 body {
-    font-family: 'Lato', sans-serif;
+    // font-family: 'Lato', sans-serif;
+    font-family: "Gilroy-Bold", sans-serif;
     -webkit-font-smoothing: antialiased;
     color: $dark;
 }
@@ -29,5 +30,21 @@ section.hero {
     transition: $smooth;
     &:hover {
         background: $primary-hover;
+    }
+}
+
+.size {
+    background: $secondary;
+}
+
+.add-to-cart {
+    border: 2px solid $primary;
+    color: $primary;
+    border-radius: 10px 0 10px 0;
+    transition: $smooth;
+    &:hover {
+        background: $primary;
+        border-color: $pure;
+        color: $pure;
     }
 }
