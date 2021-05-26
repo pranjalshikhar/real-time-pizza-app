@@ -48,3 +48,6 @@
         - Dependencies socket.io
 - Build Project for deployment.
 - Deploy project on Live Server.
+
+
+[![wakatime](https://wakatime.com/badge/github/pranjalshikhar/real-time-pizza-app.svg)](https://wakatime.com/badge/github/pranjalshikhar/real-time-pizza-app)
