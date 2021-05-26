@@ -1,10 +1,31 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities; */
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
 body {
-  background: red;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #232323;
+}
+
+nav li:last-child a {
+  background: #FE5F1E;
+}
+nav li:last-child a:hover {
+  background: #B23301;
+}
+
+nav li a {
+  transition: all 0.3 ease-in-out;
+}
+nav li a:hover {
+  color: #FE5F1E;
+}
+
+section.hero {
+  background: #F8F8F8;
+}
+
+.btn-primary {
+  background: #FE5F1E;
+  transition: all 0.3 ease-in-out;
+}
+.btn-primary:hover {
+  background: #B23301;
 }

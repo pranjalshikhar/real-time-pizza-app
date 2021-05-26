@@ -4,14 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" type="text\css">
+    <title>PIZZALICIOUS</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css" >
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" href="/img/favicon.ico">
 </head>
-<body>
+<body class="pl-16 pr-12">
     
-    <h1>Pranjal</h1>
+    <!-- Nav Bar -->
+    <nav class="container mx-auto flex items-center justify-between py-4">
+        <div>
+            <img src="/img/logo.png" alt="logo">
+        </div>
+        <div>
+            <ul class="flex items-center">
+                <li class="ml-6"><a href="#">Menu</a></li>
+                <li class="ml-6"><a href="#">Offers</a></li>
+                <li class="ml-6"><a href="#">Register</a></li>
+                <li class="ml-6"><a href="#">Login</a></li>
+                <li class="ml-6"><a href="#" class="inline-block px-4 py-2 rounded-full"><img src="/img/cart.png" alt="cart"></a></li>
+            </ul>
+        </div>
+    </nav>    
+
+    <!-- Hero Section -->
+    <section class="hero py-16">
+        <div class="container mx-auto flex justify-between items-center pl-12">
+            <div class="w-1/2">
+                <h6 class="text-lg"><em>Are you hungry?</em></h6>
+                <h1 class="text-6xl font-bold">Don't Wait !</h1>
+                <button class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
+            </div>
+            <div class="w-1/2">
+                <img src="/img/hero-pizza.png" alt="hero">
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="menu container mx-auto py-8"> 
+        <h1 class="text-xl font-bold mb-8 text-center">ALL PIZZAS</h1>
+    </section>
+
     <script src="/js/app.js"></script>
 </body>
 </html>
