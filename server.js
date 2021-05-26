@@ -8,15 +8,21 @@ const path = require('path');
 // Use CSS
 app.use(express.static(__dirname +  '/public'));
 
-app.get('/', (req,res) => {
-    res.render('home');
-})
+
 
 // Set Template
 app.use(expressLayout);
 app.set('views', path.join(__dirname, '/resources/views/'));
 app.set('view engine', 'ejs');
 
+
+app.get('/', (req,res) => {
+    res.render('home');
+});
+
+app.get('/cart', (req, res) => {
+    res.render('customer/cart');
+});
 
 
 app.listen(PORT, ()=> {

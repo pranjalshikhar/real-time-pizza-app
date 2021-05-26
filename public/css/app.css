@@ -1,5 +1,5 @@
 body {
-  font-family: "Gilroy-Bold", sans-serif;
+  font-family: "Gilroy-Medium", sans-serif;
   -webkit-font-smoothing: antialiased;
   color: #232323;
 }
@@ -44,4 +44,12 @@ section.hero {
   background: #FE5F1E;
   border-color: #FFF;
   color: #FFF;
+}
+
+section.cart {
+  background: #F8F8F8;
+}
+
+.amount {
+  color: #FE5F1E;
 }

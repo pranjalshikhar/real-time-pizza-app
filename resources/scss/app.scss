@@ -1,8 +1,7 @@
 @import './variables';
 
 body {
-    // font-family: 'Lato', sans-serif;
-    font-family: "Gilroy-Bold", sans-serif;
+    font-family: "Gilroy-Medium", sans-serif;
     -webkit-font-smoothing: antialiased;
     color: $dark;
 }
@@ -47,4 +46,13 @@ section.hero {
         border-color: $pure;
         color: $pure;
     }
+}
+
+
+section.cart {
+    background: $secondary;
+}
+
+.amount {
+    color: $primary;
 }
