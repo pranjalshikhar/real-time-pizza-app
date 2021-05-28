@@ -1,3 +1,4 @@
+const order = require('../../../models/order')
 const Order = require('../../../models/order')
 
 const orderController = () => {
@@ -24,6 +25,11 @@ const orderController = () => {
                 req.flash('error', 'Something went wrong.')
                 return res.redirect('/cart')
             })
+        },
+        async index(req, res) {
+            const orders = await Order.find({ customerId: req.user._id })
+            // console.log(orders)
+            res.render('customer/order', { orders: orders })
         }
     }
 }

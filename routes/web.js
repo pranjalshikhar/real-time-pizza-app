@@ -17,7 +17,9 @@ const initRoutes = (app) => {
     app.get('/cart', cartController().cart)
     app.post('/update-cart', cartController().update)
 
+    // Customer Routes
     app.post('/orders', orderController().store)
+    app.get('/customer/orders', orderController().index)
 }
 
 module.exports = initRoutes;
