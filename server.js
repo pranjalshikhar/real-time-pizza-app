@@ -11,13 +11,6 @@ const flash = require('express-flash');
 const MongoDbStore = require('connect-mongo');
 
 
-app.use(flash());
-
-
-// Assets
-app.use(express.static(__dirname +  '/public'));
-
-
 // Database Connection
 const url = 'mongodb://localhost/pizza';
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
@@ -27,7 +20,6 @@ connection.once('open', () => {
 }).catch(err => {
     console.log('Connection Failed..');
 });
-
 
 
 // Session Config
@@ -40,6 +32,23 @@ app.use(session({
         mongoUrl: url
     }),
 }));
+
+
+
+app.use(flash());
+
+
+// Assets
+app.use(express.static(__dirname +  '/public'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+
+
+// Global Middleware
+app.use((req, res, next) =>{
+    res.locals.session = req.session
+    next()
+})
 
 
 

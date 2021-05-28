@@ -15,16 +15,16 @@
 <!-- Menu -->
 <section class="menu container mx-auto py-8"> 
         <h1 class="text-lg font-bold mb-8 text-center">ALL PIZZAS</h1>
-        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+        <div class="grid grid-cols-4 gap-y-12 gap-x-16">
             <% pizzas.forEach(function(pizza) { %>
-                <div class="w-64 mt-16">
+                <div class="w-64">
                     <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>" alt="pizza">
                     <div class="text-center">
                         <h2 class="mb-4 text-lg"><%= pizza.name %></h2>
                         <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= pizza.size %></span>
                         <div class="flex items-center justify-around mt-6">
                             <span>&#8377;<%= pizza.price %></span>
-                            <button class="add-to-cart py-1 px-6 flex items-center">
+                            <button data-pizza="<%= JSON.stringify(pizza) %>" class="add-to-cart py-1 px-6 flex items-center">
                                 <span>+</span>
                                 <span class="ml-4">Add</span>
                             </button>

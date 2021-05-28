@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/pranjalshikhar/real-time-pizza-app#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "connect-mongo": "^4.4.1",
     "dotenv": "^10.0.0",
     "ejs": "^3.1.6",
