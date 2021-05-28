@@ -12,7 +12,7 @@ const MongoDbStore = require('connect-mongo');
 
 
 // Database Connection
-const url = 'mongodb://localhost/pizza';
+const url = process.env.MONGO_CONNECTION_URL;
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
