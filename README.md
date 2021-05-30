@@ -41,8 +41,8 @@
 - ✔Place order functionality.
 - ✔Show all my orders on customer order page.
 - ✔Show orders on admin orders page
-- Change order status
-- Create orders single page with status
+- ✔Change order status
+- ✔Create orders single page with status
 - Order Tracker
     - Socket Connection
         - Dependencies socket.io
