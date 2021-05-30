@@ -74,3 +74,12 @@ function updateStatus(order) {
 }
 
 updateStatus(order);
+
+
+// Socket
+let socket = io()
+// Join
+if(order) {
+    socket.emit('join', `order_${order._id}`)    
+}
+

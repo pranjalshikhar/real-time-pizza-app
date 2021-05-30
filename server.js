@@ -12,6 +12,7 @@ const MongoDbStore = require('connect-mongo');
 const passport = require('passport');
 
 
+
 // Database Connection
 const url = process.env.MONGO_CONNECTION_URL;
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
@@ -21,6 +22,10 @@ connection.once('open', () => {
 }).catch(err => {
     console.log('Connection Failed..');
 });
+
+
+// Event Emitter
+
 
 
 
@@ -36,6 +41,7 @@ app.use(session({
 }));
 
 
+
 // Passport config
 const passportInit = require('./app/config/passport')
 passportInit(passport)
@@ -43,13 +49,16 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
+
 app.use(flash());
+
 
 
 // Assets
 app.use(express.static(__dirname +  '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
+
 
 
 // Global Middleware
@@ -67,10 +76,26 @@ app.set('views', path.join(__dirname, '/resources/views/'));
 app.set('view engine', 'ejs');
 
 
+
 // Call Routes
 require('./routes/web')(app);
 
 
-app.listen(PORT, ()=> {
+
+const server = app.listen(PORT, ()=> {
     console.log(`Connected at ${PORT}`);
+});
+
+
+
+// Socket
+const io = require('socket.io')(server)
+io.on('connection', (socket) =>{
+    console.log('Socket.io Connected..');
+    // console.log(socket.id)
+    socket.on('join', (orderId) => {
+        console.log(orderId)
+        socket.join(orderId)
+    });
+    
 });
