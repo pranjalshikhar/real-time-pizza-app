@@ -2,25 +2,26 @@ import axios from 'axios'
 import Noty from 'noty'
 import { initAdmin } from './admin'
 import moment from 'moment'
+// import { initStripe } from './stripe'
 
 let addToCart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
 
-const updateCart = (pizza) => {
+function updateCart(pizza) {
     axios.post('/update-cart', pizza).then(res => {
         cartCounter.innerText = res.data.totalQty
         new Noty({
             type: 'success',
             timeout: 1000,
+            text: 'Item added to cart',
             progressBar: false,
-            text: 'Item added to cart.'
         }).show();
     }).catch(err => {
         new Noty({
             type: 'error',
             timeout: 1000,
+            text: 'Something went wrong',
             progressBar: false,
-            text: 'Something went wrong'
         }).show();
     })
 }
@@ -33,14 +34,13 @@ addToCart.forEach((btn) => {
 })
 
 // Remove alert message after X seconds
-const alertMsg = document.querySelector('#success-alert') 
+const alertMsg = document.querySelector('#success-alert')
 if(alertMsg) {
     setTimeout(() => {
         alertMsg.remove()
     }, 2000)
 }
 
-initAdmin()
 
 
 // Change order status
@@ -75,11 +75,31 @@ function updateStatus(order) {
 
 updateStatus(order);
 
+// initStripe()
 
 // Socket
 let socket = io()
+
 // Join
 if(order) {
-    socket.emit('join', `order_${order._id}`)    
+    socket.emit('join', `order_${order._id}`)
+}
+let adminAreaPath = window.location.pathname
+if(adminAreaPath.includes('admin')) {
+    initAdmin(socket)
+    socket.emit('join', 'adminRoom')
 }
 
+
+socket.on('orderUpdated', (data) => {
+    const updatedOrder = { ...order }
+    updatedOrder.updatedAt = moment().format()
+    updatedOrder.status = data.status
+    updateStatus(updatedOrder)
+    new Noty({
+        type: 'success',
+        timeout: 1000,
+        text: 'Order updated',
+        progressBar: false,
+    }).show();
+})
