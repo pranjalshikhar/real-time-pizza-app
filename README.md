@@ -1,7 +1,7 @@
 # Real-Time Pizza Application
 
 ### 🚀 Steps to create the project.
-- Create directory structure.
+✔ Create directory structure.
 - Create a npm project and install all dependencies.
     - Dependencies
         - express
