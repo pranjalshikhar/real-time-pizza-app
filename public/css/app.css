@@ -438,3 +438,29 @@ section.status {
 .status-box ul li:nth-child(5) span:after {
   box-shadow: 0 20px 1px 20px #F8F8F8;
 }
+
+.status-box ul li.step-completed:before {
+  background: #CCC;
+}
+
+.status-box ul li.step-completed span:after {
+  background: #CCC;
+}
+
+.status-box ul li.step-completed span {
+  color: #CCC;
+}
+
+.status-box ul li.current span {
+  color: #FE5F1E;
+}
+
+.status-box ul li.current span:after {
+  background: #FE5F1E;
+}
+
+.status-box ul li small {
+  float: right;
+  font-size: 14px;
+  margin-top: 8px;
+}
