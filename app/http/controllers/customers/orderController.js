@@ -1,4 +1,4 @@
-const Order = require('../../../models/order')
+const Order = require('../../../models/orders')
 const moment = require('moment')
 
 const orderController = () => {
@@ -31,7 +31,7 @@ const orderController = () => {
             const orders = await Order.find({ customerId: req.user._id }, null, { sort: {'createdAt': -1} })
             // console.log(orders)
             res.header('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0')
-            res.render('customer/order', { orders: orders, moment: moment })
+            res.render('customer/orders', { orders: orders, moment: moment })
         }
     }
 }
