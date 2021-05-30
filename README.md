@@ -43,7 +43,7 @@
 - ✔Show orders on admin orders page
 - ✔Change order status
 - ✔Create orders single page with status
-- Order Tracker
+- ✔Order Tracker
     - Socket Connection
         - Dependencies socket.io
 - Build Project for deployment.
