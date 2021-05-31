@@ -13,25 +13,32 @@
 </section>
 
 <!-- Menu -->
-<section class="menu container mx-auto py-8">
+
+<section class="menu container mx-auto py-8 px-8">
     <h1 class="text-lg font-bold mb-8 text-center">ALL PIZZAS</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 col-gap-12 row-gap-16">
         <% pizzas.forEach(function(pizza) { %>
-        <div class="w-full md:w-64 mb-4">
-            <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>" alt="">
-            <div class="text-center">
-                <h2 class="mb-4 text-lg"><%= pizza.name %></h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= pizza.size %></span>
-                <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹<%= pizza.price %></span>
-                    <button data-pizza="<%= JSON.stringify(pizza) %>"
-                        class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
+            <!-- Column -->
+            <div class="w-full md:w-64 mb-4 ml-4">
+                <!-- Article -->
+                <article class="overflow-hidden rounded-lg shadow-lg text-center">
+                    <img alt="Placeholder" class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>">
+                    <header class="items-center justify-between leading-tight p-2 md:p-4">
+                        <h2 class="mb-4 text-lg"><%= pizza.name %></h2> 
+                        <span class="size py-1 px-4 rounded-full uppercase text-xs"><%= pizza.size %></span>          
+                    </header>
+                    <div class="flex items-center justify-around mb-6">
+                        <span class="font-bold text-lg">₹<%= pizza.price %></span>
+                        <button data-pizza="<%= JSON.stringify(pizza) %>"
+                            class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold">
+                            <span>+</span>
+                            <span class="ml-4">Add</span>
+                        </button>
+                    </div>
+                </article>
+                <!-- END Article -->
             </div>
-        </div>
+            <!-- END Column -->
         <% }) %>
     </div>
 </section>
