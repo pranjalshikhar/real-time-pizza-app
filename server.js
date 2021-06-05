@@ -82,6 +82,9 @@ app.set('view engine', 'ejs');
 
 // Call Routes
 require('./routes/web')(app);
+app.use((req, res) => {
+    res.status(404).render('errors/404')
+})
 
 
 
