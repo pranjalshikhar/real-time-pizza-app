@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/pranjalshikhar/real-time-pizza-app#readme",
   "dependencies": {
+    "@stripe/stripe-js": "^1.15.0",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "connect-mongo": "^4.4.1",
