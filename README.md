@@ -46,7 +46,8 @@
 - ✔Order Tracker
     - Socket Connection
         - Dependencies socket.io
-- Build Project for deployment.
+- ✔Build Project for deployment.
+- ✔Add Stripe Payment
 - Deploy project on Live Server.
 
 
