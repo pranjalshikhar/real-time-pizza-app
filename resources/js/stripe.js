@@ -1,6 +1,5 @@
-import axios from 'axios'
-import Noty from 'noty'
 import {loadStripe} from '@stripe/stripe-js';
+import {placeOrder} from './apiService';
 
 export async function initStripe() {
     const stripe = await loadStripe('pk_test_51Izj6YSJg3PAjrZPjdDP8f7IWMGaq44jBvkTOuwBlUbgptakJyvzmp5ynWBIzSnGIL9pln9q04VmIw49Gy8vKpEf00aOS1wixg');
@@ -56,28 +55,23 @@ export async function initStripe() {
             for(let [key, value] of formData.entries()) {
                 formObject[key] = value
             }
-            axios.post('/orders', formObject).then((res) => {
-                new Noty({
-                    type: 'success',
-                    timeout: 1000,
-                    text: res.data.message,
-                    progressBar: false,
-                }).show();
 
-                setTimeout(() => {
-                    window.location.href ='/customer/orders'
-                }, 1000)            
 
+            if(!card) {
+                placeOrder(formObject)
+                return;
+            }
+
+            // Verify Card
+            stripe.createToken(card).then((result) => {
+                // console.log(result.token.id)
+                formObject.stripeToken = result.token.id
+                placeOrder(formObject)
             }).catch((err) => {
-                new Noty({
-                    type: 'success',
-                    timeout: 1000,
-                    text: error.res.data.message,
-                    progressBar: false,
-                }).show();
+                console.log(err)
             })
-        
-            console.log(formObject)
+
+            // console.log(formObject)
         })
     }
 }
