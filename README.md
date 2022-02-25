@@ -1,4 +1,6 @@
 # Real-Time Pizza Application
+<img src="https://raw.githubusercontent.com/pranjalshikhar/real-time-pizza-app/main/Snapshot.jpg">
+
 
 ### 🚀 Steps to create the project.
 - ✔Create directory structure.
