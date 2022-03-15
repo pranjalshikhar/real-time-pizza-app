@@ -2,7 +2,7 @@ import {loadStripe} from '@stripe/stripe-js';
 import {placeOrder} from './apiService';
 
 export async function initStripe() {
-    const stripe = await loadStripe('pk_test_51J2WCSSBMtSj7aQx6txJSPqvUM1zm1FLn8YLHByPraYKQL3L8biFAFuNMWV9OKhU2oe5yIcVdljapIqWiKRtMNVd00eCn0IY0u');
+    const stripe = await loadStripe('pk_test_51KdYO4SI4noICuySSOZ7iWWoxzZvR6FrMzdZUjZ7LtKAYlA33luNEZcca3BeC5NxOr0iYW3RMjmpezPjVg6T0YUU00QwsxZ8Ve');
     let card = null;
     
     function mountWidget() {
